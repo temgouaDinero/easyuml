@@ -18,7 +18,7 @@ router.get('/',function(req,res,next){
         next();
     }
 });
-
+//**Consultation de la BD des utilisateurs et login
 router.post('/',function(req,res,next){
     db.query("select * from user where login =  ? and pwd = ?",[req.body.login,req.body.password],function(err,rows,fields){
         if(rows.length){
